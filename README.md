@@ -1,141 +1,129 @@
-🏡 Real Estate Sales Analysis – Linear Regression Model
-👤 Author
+# 🏡 Real Estate Sales Analysis – Linear Regression Model
 
-Ye Myat Oo
+## 👤 Author  
+Ye Myat Oo  
 
-📘 Overview
+---
 
-The Real Estate Sales Analysis Project explores how machine learning—specifically Linear Regression—can be used to understand and predict property sale prices in Connecticut, USA.
+## 📘 Overview  
+The **Real Estate Sales Analysis Project** explores how machine learning—specifically **Linear Regression**—can be used to understand and predict property sale prices in Connecticut, USA.
 
-This project was developed using Python, Pandas, NumPy, Matplotlib, Seaborn, and Scikit-Learn.
-It focuses on data preprocessing, statistical analysis, visualisation, model development, and feature engineering.
+Developed using **Python**, **Pandas**, **NumPy**, **Matplotlib**, **Seaborn**, and **Scikit-Learn**, this project demonstrates skills in:
 
-This repository demonstrates practical experience in:
+- Data preprocessing  
+- Statistical analysis  
+- Data visualisation  
+- Machine learning model building  
+- Cross-validation  
+- Feature engineering  
+- Clean and structured Jupyter Notebook development  
 
-Data cleaning & preprocessing
+Originally created as an academic coursework project, this repository is refined for portfolio and professional presentation.
 
-Exploratory data analysis
+---
 
-Statistical distribution analysis
+## 📂 Dataset  
 
-Data visualisation with graphs
-
-Machine Learning (Linear Regression)
-
-Cross-validation & model evaluation
-
-Feature engineering & scaling
-
-Originally developed as an academic coursework project, this version is polished for portfolio and professional use.
-
-📂 Dataset
-
-Source: State of Connecticut – Data.gov
-Dataset: Real Estate Sales 2001–2022 GL
-Original Size: 1,097,629 rows
-Sampled Size: 10,000 rows (for faster, smoother processing)
+**Source:** State of Connecticut – Data.gov  
+**Dataset:** *Real Estate Sales 2001–2022 GL*  
+**Original Size:** 1,097,629 rows  
+**Processed Sample:** 10,000 rows (for efficient computation)
 
 Key columns include:
 
-List Year
-
-Town
-
-Address
-
-Assessed Value
-
-Sale Amount
-
-Property Type
-
-Sales Ratio
+- List Year  
+- Town  
+- Address  
+- Assessed Value  
+- Sale Amount  
+- Property Type  
+- Sales Ratio  
 
 During preprocessing:
 
-Columns with extreme missing data were removed
+- Columns with excessive missing data were removed  
+- Categorical missing values were replaced with `"Unknown"`  
+- Dataset was converted into a clean, analysis-ready form  
 
-Categorical columns were filled with "Unknown"
+---
 
-Dataset was transformed into a clean 1NF-ready format
+## 🔧 Project Workflow
 
-🔧 Project Workflow
-1. Data Preparation
+### **1. Data Preparation**
+- Removed unusable columns  
+- Filled missing values  
+- Sampled dataset to 10,000 entries  
+- Ensured consistent formatting & structure  
 
-Removed noisy/unusable columns
+---
 
-Filled missing categorical entries
+### **2. Statistical Analysis**
+Computed descriptive statistics using Pandas/NumPy:
 
-Sampled dataset to 10,000 records
+- Mean, Median, Standard Deviation  
+- Skewness & Kurtosis  
+- Outlier identification  
+- Distribution shape analysis  
 
-Ensured consistent formatting & types
+Result: **Highly right-skewed** numerical columns due to extreme sale prices.
 
-2. Statistical Analysis
+---
 
-Computed key descriptive statistics:
+### **3. Visualisation**
+Visualisations created using **Matplotlib** and **Seaborn**:
 
-Mean, median, standard deviation
+- Histogram of Sale Amount  
+- Boxplot of Sale Amount  
+- Histogram of Assessed Value  
+- Correlation Matrix Heatmap  
 
-Skewness & kurtosis
+📌 **Most important visualisation**  
+The **Correlation Heatmap**, showing that *Assessed Value* has the strongest relationship with *Sale Amount*.
 
-Identification of outliers & distribution shape
+---
 
-Result: Highly right-skewed distributions due to extreme property prices.
+## 🤖 Machine Learning Model
 
-3. Visualisation
+### **Model:** Linear Regression (Scikit-Learn)
 
-Created visual insights using Matplotlib & Seaborn:
+### **Features (X):**
+- Assessed Value  
+- Sales Ratio  
+- List Year  
 
-Histogram of Sale Amount
+### **Target (y):**
+- Sale Amount  
 
-Boxplot of Sale Amount
+### **Model Results:**
 
-Histogram of Assessed Value
+| Metric | Value |
+|--------|--------|
+| **MSE** | ~3.02 × 10¹² |
+| **R² Score** | 0.06 |
 
-Correlation Matrix Heatmap
+The low R² indicates non-linear behaviour and strong influence of outliers, making the dataset challenging for simple linear regression.
 
-📌 Most important plot:
-The Correlation Heatmap, which confirms that Assessed Value is the strongest predictor of Sale Amount.
+---
 
-🤖 Machine Learning Model
-Model Used: Linear Regression
-Features:
+## 🧪 Validation  
+Used **5-Fold Cross-Validation** to evaluate model stability:
 
-Assessed Value
+- MSE varied significantly across folds  
+- R² ranged from negative to moderately positive  
+- Confirms non-linear complexity in the dataset  
 
-Sales Ratio
+---
 
-List Year
+## 🛠️ Feature Engineering  
 
-Target:
+Implemented the following enhancements:
 
-Sale Amount
+- Polynomial Features (degree 2)  
+- One-Hot Encoding for categorical columns  
+- CountVectorizer for `Town` text data  
+- Standard Scaling for numerical features  
 
-Results:
-Metric	Value
-MSE	~3.02 × 10¹²
-R²	0.06
+---
 
-The model shows that while some linear correlation exists, the dataset contains strong non-linear patterns and many outliers.
+## 📁 Repository Structure  
 
-🧪 Validation
-
-Used 5-Fold Cross Validation to evaluate consistency:
-
-MSE values varied across folds
-
-R² values ranged from negative to moderately positive
-
-Confirms model instability due to dataset complexity
-
-🛠️ Feature Engineering
-
-To improve predictive power, the following were implemented:
-
-Polynomial Features (degree 2)
-
-One-Hot Encoding for categorical variables
-
-CountVectorizer for textual “Town” data
-
-StandardScaler for numerical feature scaling
