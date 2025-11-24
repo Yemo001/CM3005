@@ -27,7 +27,10 @@ Originally created as an academic coursework project, this repository is refined
 **Source:** State of Connecticut – Data.gov  
 **Dataset:** *Real Estate Sales 2001–2022 GL*  
 **Original Size:** 1,097,629 rows  
-**Processed Sample:** 10,000 rows (for efficient computation)
+
+### 📌 Note on Dataset Size  
+The original dataset (**119 MB**) exceeds GitHub’s 100MB file-size limit and is therefore **not included** in the repository.  
+A smaller **10,000-row sampled dataset (`real_estate_sampled.csv`)** is included for analysis, reproducibility, and testing.
 
 Key columns include:
 
@@ -124,15 +127,3 @@ Implemented the following enhancements:
 - Standard Scaling for numerical features  
 
 ---
-
-
----
-
-## ▶️ How to Run  
-
-Install dependencies:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-
-
