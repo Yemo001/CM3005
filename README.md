@@ -125,3 +125,14 @@ Implemented the following enhancements:
 
 ---
 
+
+---
+
+## ▶️ How to Run  
+
+Install dependencies:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+
