@@ -1,33 +1,41 @@
-# CM3005
+🏡 Real Estate Sales Analysis – Linear Regression Model
+👤 Author
 
-📊 Real Estate Sales Analysis – Linear Regression Model
+Ye Myat Oo
 
-A CM3005 Data Science Coursework Project
+📘 Overview
 
-📌 Overview
+The Real Estate Sales Analysis Project explores how machine learning—specifically Linear Regression—can be used to understand and predict property sale prices in Connecticut, USA.
 
-This project applies data preprocessing, statistical analysis, data visualisation, and a linear regression model to understand factors influencing property prices in Connecticut (USA).
-The objective is to demonstrate how machine learning can model real-world pricing patterns using structured numerical and categorical features.
+This project was developed using Python, Pandas, NumPy, Matplotlib, Seaborn, and Scikit-Learn.
+It focuses on data preprocessing, statistical analysis, visualisation, model development, and feature engineering.
 
-This repository contains:
+This repository demonstrates practical experience in:
 
-The full Jupyter Notebook (.ipynb)
+Data cleaning & preprocessing
 
-The PDF export of the report
+Exploratory data analysis
 
-Cleaned dataset used for the project
+Statistical distribution analysis
 
-Supporting scripts and outputs
+Data visualisation with graphs
+
+Machine Learning (Linear Regression)
+
+Cross-validation & model evaluation
+
+Feature engineering & scaling
+
+Originally developed as an academic coursework project, this version is polished for portfolio and professional use.
 
 📂 Dataset
 
-Source: Real Estate Sales 2001–2022 (State of Connecticut, Data.gov)
-Original Size: 1,097,629 rows, 14 columns
-Processed Size: 10,000 sampled rows (to improve performance on local machines)
+Source: State of Connecticut – Data.gov
+Dataset: Real Estate Sales 2001–2022 GL
+Original Size: 1,097,629 rows
+Sampled Size: 10,000 rows (for faster, smoother processing)
 
-The dataset includes fields such as:
-
-Serial Number
+Key columns include:
 
 List Year
 
@@ -43,59 +51,55 @@ Property Type
 
 Sales Ratio
 
-Residential Type
-
 During preprocessing:
 
-Columns with excessive missing values (e.g., OPM remarks, Assessor Remarks, Non Use Code) were removed.
+Columns with extreme missing data were removed
 
-Missing categorical values were filled with "Unknown".
+Categorical columns were filled with "Unknown"
 
-Dataset was transformed into a clean 1NF structure.
+Dataset was transformed into a clean 1NF-ready format
 
 🔧 Project Workflow
-1. Data Preprocessing
+1. Data Preparation
 
-Handle missing values
+Removed noisy/unusable columns
 
-Drop unsuitable columns
+Filled missing categorical entries
 
-Sample the dataset for computational efficiency
+Sampled dataset to 10,000 records
 
-Convert the dataset into a cleaned format for analysis
+Ensured consistent formatting & types
 
 2. Statistical Analysis
 
-Performed using pandas and NumPy, including:
+Computed key descriptive statistics:
 
-Mean, Median, Standard Deviation
+Mean, median, standard deviation
 
-Skewness + Kurtosis (to identify outliers & distribution shape)
+Skewness & kurtosis
 
-Key finding:
-The dataset contains strong right-skewed distributions due to extreme property prices.
+Identification of outliers & distribution shape
 
-📈 Visualisations
+Result: Highly right-skewed distributions due to extreme property prices.
 
-Using Matplotlib and Seaborn, the notebook includes:
+3. Visualisation
+
+Created visual insights using Matplotlib & Seaborn:
 
 Histogram of Sale Amount
 
-Boxplot of Sale Amount (outlier detection)
+Boxplot of Sale Amount
 
 Histogram of Assessed Value
 
-Correlation heatmap for numeric variables
+Correlation Matrix Heatmap
 
-Most important visualisation:
-
-🔥 Correlation Matrix
-
-Reveals that Assessed Value has the strongest positive correlation with Sale Amount, making it a key predictive feature.
+📌 Most important plot:
+The Correlation Heatmap, which confirms that Assessed Value is the strongest predictor of Sale Amount.
 
 🤖 Machine Learning Model
-Model Used: Linear Regression (Scikit-Learn)
-Features (X):
+Model Used: Linear Regression
+Features:
 
 Assessed Value
 
@@ -103,34 +107,35 @@ Sales Ratio
 
 List Year
 
-Target (y):
+Target:
 
 Sale Amount
 
 Results:
-
 Metric	Value
 MSE	~3.02 × 10¹²
-R²	~0.06
+R²	0.06
 
-Cross-validation (k=5) was also performed to validate model stability.
+The model shows that while some linear correlation exists, the dataset contains strong non-linear patterns and many outliers.
 
 🧪 Validation
 
-5-Fold Cross Validation
+Used 5-Fold Cross Validation to evaluate consistency:
 
-R² scores varied across folds, confirming the presence of non-linear effects and outliers
+MSE values varied across folds
 
-Reinforces the potential benefit of feature engineering or transforming variables
+R² values ranged from negative to moderately positive
+
+Confirms model instability due to dataset complexity
 
 🛠️ Feature Engineering
 
-To improve model performance, the following were implemented:
+To improve predictive power, the following were implemented:
 
 Polynomial Features (degree 2)
 
-One-Hot Encoding for categorical features
+One-Hot Encoding for categorical variables
 
-CountVectorizer for text-based town data
+CountVectorizer for textual “Town” data
 
-Standard Scaling for numerical variables
+StandardScaler for numerical feature scaling
