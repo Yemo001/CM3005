@@ -125,5 +125,3 @@ Implemented the following enhancements:
 
 ---
 
-## 📁 Repository Structure  
-
